@@ -15,19 +15,18 @@ body {
     overflow-x: hidden;
 }
 
-
-#logo-image {
+/* Site Header & Navigation */
+.site-header__logo-image {
     width: 39px;
     height: 42px;
     margin-top: 0;
 }
 
-#logoName {
+.site-header__logo-name {
     color: rgb(21, 72, 84);
-
 }
 
-#sign-Up {
+.nav__sign-up-text {
     padding: 8px 16px;
     border: 1px solid #444;
     border-radius: 5px;
@@ -45,123 +44,119 @@ body {
 
 
 /* ==============Show Case==================== */
-.container1 {
-
+.showcase-banner { /* Was .container1 */
     background-blend-mode: overlay;
     background-color: #f8fafc;
-
 }
 
-.showcase {
+.showcase { /* This class is a block in itself, used on col-md-6 */
     margin-top: 4rem;
 }
 
-#showcase-left {
+.showcase__left-content { /* Was #showcase-left */
     margin-top: 5rem;
-
 }
 
-#New {
+.showcase__badge { /* Was #New */
     border-style: solid;
     border-color: rgb(254, 221, 96);
     border-radius: 20px;
     background-color: rgb(254, 221, 96);
 }
 
-#New1 {
+.showcase__badge-text { /* Was #New1 */
     font-size: 14px;
     font-weight: 300;
     color: rgb(0, 0, 0);
 }
 
-#mainTheme {}
+.showcase__main-theme {} /* Was #mainTheme, seems empty or just a grouping */
 
-#main-id-1 {
+.showcase__title { /* Was #main-id-1 */
     font-size: 55px;
     font-weight: 700;
-    /* line-height: normal; */
     line-height: 67px;
     color: rgb(0, 0, 0);
-
 }
 
-#heading-light-1 {
+.showcase__subheading { /* Was #heading-light-1 */
     font-size: 22px;
     font-weight: 200;
 }
 
-
-#video-adjustment {
+/* Assuming .showcase__video is applied to the video tag in HTML */
+.showcase__video { /* Video element itself, not the source tag */
     width: 100%;
     margin: auto;
 }
 
-
-.btn {
-    margin-top: 3.5rem !important;
-    background-color: #07f !important;
-    color: #ffffff;
-
+/* Custom Button Styles */
+/* Ensure this class is added to the specific buttons in index.html 
+   e.g., class="btn btn-lg btn--primary-custom" */
+.btn--primary-custom {
+    margin-top: 3.5rem; /* !important removed */
+    background-color: #07f; /* !important removed */
+    color: #ffffff; /* Bootstrap's .btn also sets color, so this might need !important if specificity is an issue, but try without first */
 }
 
-.btn:hover {
-    background-color: rgb(0, 0, 0) !important;
-    color: #ffffff;
+.btn--primary-custom:hover {
+    background-color: rgb(0, 0, 0); /* !important removed */
+    color: #ffffff; /* As above, try without !important first */
 }
 
-/* <!-- =============== Container of main Data ======================== --> */
+/* <!-- =============== Section: Visualize & Common Section Styles ======================== --> */
 
-.content-main-data {
+.content-main-data { /* This class is used as a wrapper for content within columns, might be too generic.
+                        Retaining for now, but ideally specific block__element classes would be better. */
     margin-top: 4rem;
     position: relative;
 }
 
-.bg-color {
+.bg-color { /* Used for background of Visualize section and Latest Updates */
     background-blend-mode: overlay;
     background-color: #f2f6fa;
 }
 
-
-
-#content-1 {
-
+/* Generic Section Title (used for Visualize, Document, etc.) */
+.section__title {
     margin-top: 20px;
     font-size: 40px;
     font-weight: 900;
-    Color: rgb(29, 18, 60);
+    color: rgb(29, 18, 60); /* Corrected 'Color' to 'color' */
     display: inline-block;
-
 }
 
-#content-2 {
+/* Generic Section Subheading/Description */
+.section__subheading {
     font-size: 18px;
     font-weight: 300;
     color: rgb(37, 56, 88);
-    /* width: 409px; */
     margin-bottom: 1rem;
-
 }
 
-#img-icon {
+.visualize-section__icon { /* Was #img-icon */
     width: 55px;
     margin-bottom: 5rem;
 }
 
-.txt-Area1 {
-    margin-top: 3rem;
+/* Feature Card Styles (replaces .txt-Area1, .txt-Area2, .txt-Area3) */
+.feature-card {
     display: inline-block;
-    box-shadow: 0 28px 45px rgba(0, 0, 0, .5);
     border-radius: 3%;
     background-color: #ffffff;
+    /* Common styles from .txt-Area1, .txt-Area2, .txt-Area3 */
+}
+
+.feature-card--editor { /* Was .txt-Area1 */
+    margin-top: 3rem;
+    box-shadow: 0 28px 45px rgba(0, 0, 0, .5);
     position: absolute;
     top: 0;
     left: 0;
-
 }
 
-
-.img-Area {
-    content: '';
+.feature-card__stripe-pattern { /* Was .img-Area */
+    content: ''; /* This doesn't work on a div, background should be used */
     width: 270px;
     height: 170px;
     background: url(../images/stripePattern.png) repeat;
@@ -169,198 +164,201 @@ body {
     left: -70px;
     opacity: .2;
     position: absolute;
+    z-index: -1; /* Ensure it's behind the card content */
 }
 
-.img-main-content {
+.feature-card__icon { /* Was .img-main-content */
     margin: .5rem;
     width: 44px;
     height: 44px;
 }
 
-.txt-Area2 {
+.feature-card--preview { /* Was .txt-Area2 */
+    /* .txt-Area2 specific styles */
+    position: absolute; /* This was the primary style in .txt-Area2 */
+     /* Margins like .mrgn (margin-top: 20rem) should be applied via parent or utility classes */
+    box-shadow: 0 28px 45px rgba(0,0,0,.5); /* Added from .sm-view in media query */
 
-    position: absolute;
 }
 
-.mrgn {
-    margin-top: 20rem;
-}
-
-.manage-data {
+.feature-card__title { /* Was .manage-data */
     line-height: 3rem;
     margin-left: .5rem;
 }
 
-.txt-Area3 {
-    margin-top: 7.4rem;
-    display: inline-block;
-    border-radius: 3%;
-    margin-left: 2rem;
+/* .txt-Area3 was used for Components and Iterate cards */
+/* Base .feature-card covers display:inline-block and border-radius. */
+/* Margin-top and margin-left from original .txt-Area3 will be handled by specific card instances or layout classes if needed. */
+.feature-card--components { /* For specific styling if #txt-Area3 for Components needs it */
+    margin-top: 7.4rem; /* from original .txt-Area3 */
+    margin-left: 2rem; /* from original .txt-Area3 */
+}
+
+.feature-card--iterate { /* For specific styling if #txt-Area3 for Iterate needs it */
+     margin-top: 7.4rem; /* from original .txt-Area3, but responsive-adusjment-1 parent has margin. Review needed. */
+    /* margin-left: 2rem; This might be handled by parent col-md-11 and ml-5 on parent */
 }
 
 
-
-#img-icon1 {
-
+/* === Document Section === */
+.document-section__heading-icon { /* Was #img-icon1 and .document-section__icon */
     width: 50px;
     height: 50px;
-    position: absolute;
+    position: absolute; 
     margin-left: 10px;
-    top: 130px;
-
-
+    top: 130px; /* This absolute positioning is fragile and might need review with actual HTML context */
 }
 
-.content-5 {
-    margin-top: 2rem;
-    font-size: 40px;
-    font-weight: 900;
-    Color: rgb(29, 18, 60);
-    display: inline-block;
-}
+/* .content-5 class is removed, .section__title should be used in HTML */
 
-.document-txt-area {
+.document-section__text-area { /* Was .document-txt-area */
     margin-top: 8rem;
 }
 
-#img-main {
+.document-section__main-image { /* Was #img-main */
     width: 100%;
     height: auto;
     display: block;
 }
 
-
-#icons-img {
+.document-section__feature-icons-group { /* Was #icons-img */
     margin-top: 3rem;
     margin-left: .9rem;
 }
 
-.icn-img {
+/* Generic class for small feature icons with labels below */
+.feature-icon { /* Was .icn-img */
     height: 44px;
     width: 44px;
-    margin-right: 5rem;
+    margin-right: 5rem; /* Consider using gap if parent is flex/grid */
 }
 
-.txt {}
+.feature-icon__label-group {} /* Was .txt, a simple grouping div/span */
 
-.txt-1 {
+.feature-icon__label { /* Was .txt-1 */
     display: inline-block;
     margin-top: .9rem;
-    margin-right: 1.5rem;
-
+    margin-right: 1.5rem; /* Consider parent padding or gap */
 }
-
 
 /* ==================   Collaboration  ========================= */
-.txt-Area4 {
-    margin-top: 6rem;
-}
+/* .txt-Area4 {
+    margin-top: 6rem; 
+} */ /* Commented out as target is unclear / possibly unused */
 
-#img-icn2 {
+.collaboration-section__heading-icon { /* Was #img-icn2 */
     width: 50px;
     height: 50px;
-    /* position: absolute; */
     margin-left: 2.5rem;
     margin-bottom: 1.5rem;
-    margin-top: -2rem;
-    /* left: 205px; */
-    /* top: 60px; */
+    margin-top: -2rem; /* These margins might need review depending on layout */
     display: block;
 }
 
-.margin-top-5 {
+.margin-top-5 { /* Utility class, retained */
     margin-top: 5rem !important;
 }
 
-.document-txt-space {
+.collaboration-section__content-area { /* Was .document-txt-space */
     margin-top: 11.5rem;
 }
 
+/* Styles for feature previews like Sharing, Comments, Workflow, Approval */
+/* Assuming parent div in HTML will be class="feature-preview" */
+.feature-preview { 
+    /* text-align: center; can be added if Bootstrap's .text-center is removed from HTML */
+}
+.feature-preview__icon {
+    /* width: 50%; Bootstrap .w-50 can handle this in HTML */
+}
+.feature-preview__label {
+    /* Styling for the <p> tag if needed */
+}
 
 /* ===================  Mock Store ======================= */
 
-
-.ctn-dark {
+.section--dark-bg { /* Was .ctn-dark */
     background-color: #000;
-    color: #ffffff;
+    color: #ffffff; /* Default text color for this section */
 }
 
-.ctn-dark h1,
-.ctn-dark p,
-.ctn-dark h1 span {
-    color: #f8fafc !important;
+.section--dark-bg .section__title, /* Title within dark section */
+.section--dark-bg p,
+.section--dark-bg .section__title span { /* Span inside title */
+    color: #f8fafc !important; /* Ensure text is light on dark background */
 }
 
-
-
-.img-setting {
+.mock-store__feature-icon { /* Was .img-setting */
     width: 44px;
     height: 44px;
     margin: 1rem;
 }
+.mock-store__feature-label {
+    /* Styles for the <p> tags if needed */
+}
 
-
+.mock-store__interface-image {
+    /* Styles for the main store image if needed beyond HTML classes like w-75 */
+}
 
 /* ====================== Integrate =========================== */
-.h1-integrate {
-    font-size: 40px;
-    font-weight: 900;
-    color: #1d123c;
-}
+/* .h1-integrate is now .section__title (defined earlier) */
+/* .para-int is now .section__paragraph (defined earlier) */
 
-.para-int {
-    font-size: 18px;
-    font-weight: 300;
-    color: #253858;
-}
-
-.img-integrate:hover {
-    color: #ffffff;
-}
-
-.integrate-icon {
+.integrate-section__heading-icon { /* Was .integrate-icon */
     width: 50px;
     height: 50px;
-    margin-top: -28px;
-    margin-left: -66px;
+    margin-top: -28px; /* Fragile margin */
+    margin-left: -66px; /* Fragile margin */
 }
 
+.integration-logos { /* Was .integrate-icns */
+    /* display: flex; justify-content: center; if Bootstrap's justify-content-center is removed from HTML */
+}
 
-.integrate-icns {}
+.integration-logos__item { /* Was .ul-item */
+    display: inline-block; 
+    width: 204px; 
+    margin: -18px; /* Negative margin - review layout */
+}
 
-.ul-item {
-    display: inline-block;
-    width: 204px;
-    margin: -18px;
-
+.integration-logos__item img:hover { /* Was .img-integrate:hover */
+    opacity: 0.8; /* Example hover effect, original color: #ffffff; was not effective for img */
 }
 
 /* ================Latest Updates======================== */
-.bg-color-latest-update {
+.latest-updates-section--bg { /* Was .bg-color-latest-update */
     background: #f0f0f0;
-    /* height:700px; */
 }
 
-.adjust-margin {
+.adjust-margin { /* Utility class, retained */
     margin-left: 1rem;
     margin-right: 1rem;
-
 }
 
-.integrate-icon2 {
+.latest-updates__heading-icon { /* Was .integrate-icon2 */
     width: 50px;
     height: 50px;
-    margin-top: -28px;
-    margin-left: -14px;
+    margin-top: -28px; /* Fragile */
+    margin-left: -14px; /* Fragile */
 }
 
+.update-card { /* Was .img-setting-latest */
+    padding: 1px; 
+}
 
-.img-lg-update:hover {
+.update-card:hover { /* Was .img-setting-latest:hover */
     box-shadow: -1px 4px 12px 9px #edf2f9;
 }
 
-.txt-box-bg {
+.update-card__image {
+    /* width: 100%; if w-100 class removed from HTML */
+}
+.update-card__image:hover { /* Was .img-lg-update:hover */
+     /* Original box-shadow was on .img-lg-update:hover, now moved to .update-card:hover */
+}
 
+.update-card__text-content { /* Was .txt-box-bg */
     display: inline-block;
     border-radius: 3%;
     background-color: #ffffff;
@@ -368,199 +366,186 @@ body {
     padding-bottom: 5px;
     margin-bottom: 12px;
     padding: 27px;
-
-
 }
 
-.img-setting-latest {
-    padding: 1px;
-}
-
-.img-setting-latest:hover {
-    box-shadow: -1px 4px 12px 9px #edf2f9;
-}
-
+.update-card__title {} /* Placeholder for H3 inside text-content */
+.update-card__description {} /* Placeholder for P inside text-content */
 
 /* =-================== Footer ========================== */
 
-.font-adjustment {
+.footer__cta-title { /* Was .font-adjustment-1 used on h2 */
+    /* Styling for h2 "Start planning your UI now" if needed */
+}
+
+.footer__cta-link-text { /* Was .font-adjustment used on h6 */
     display: inline-block;
-
-
 }
 
-.footer-1 ul li a {
+.footer__links-row { /* Was .footer-1 */
+    /* Styles for the row containing link columns */
+}
+
+.footer__links-row ul { /* Targeting ul within .footer__links-row */
+    /* list-style: none; if .list-unstyled is removed from HTML */
+    /* padding-left: 0; if .list-unstyled is removed from HTML */
+}
+
+.footer__links-row ul li a { /* Was .footer-1 ul li a */
     text-decoration: none;
-    color: #253858;
-
+    color: #253858; /* Default text color */
 }
 
-.footer-1 ul li a:hover {
+.footer__links-row ul li a:hover { /* Was .footer-1 ul li a:hover */
     color: #444;
 }
 
-.bg-height {
+/* .bg-height {
     height: 480px;
-}
+} */ /* Commented out as it appears unused */
 
 
 @media(max-width:576px) {
 
     /* Navbar */
-    .responsive-adusjment {
+    .site-header__logo-image.responsive-adusjment { /* Updated from .responsive-adusjment */
         margin: 0px !important;
     }
 
-    .ctn-txt {
+    .ctn-txt { /* This class is generic, applied to feature-cards and other text areas. */
         text-align: center;
     }
 
-    .content-main-data {
-
+    .content-main-data { /* General wrapper class */
         margin: 25px 0px 15px 0px !important;
-        justify-items: center;
+        /* justify-items: center; /* for grid/flex containers */
     }
 
-    #main-id-1 {
+    .showcase__title { 
         text-align: center;
-        font-size: large;
-        font-size: 26px;
-        font-weight: 900;
-        line-height: 30px;
-        margin: 0px;
-
+        font-size: 26px; /* Overrides larger size */
+        font-weight: 900; /* Consistent */
+        line-height: 30px; /* Adjusted for smaller size */
+        margin: 0px; /* Consistent */
     }
 
-    .sm-view {
-        margin-top: -18rem;
-        display: inline-block;
-        box-shadow: 0 28px 45px rgba(0, 0, 0, .5);
-        border-radius: 3%;
-        background-color: #ffffff;
-        left: 14px;
+    .feature-card--preview.sm-view { /* Combined .sm-view into the specific card modifier */
+        margin-top: -18rem; 
+        left: 14px; 
         right: 14px;
     }
 
-    .sm-view-1 {
+    .sm-view-1 { /* This class usage is still unclear from current context, might be an old utility or dead code */
         margin: 0px !important;
     }
 
-
-
-    .txt-Area1 {
-        margin-top: 3rem;
-        display: inline-block;
-        box-shadow: 0 28px 45px rgba(0, 0, 0, .5);
-        border-radius: 3%;
-        background-color: #ffffff;
-        position: inherit;
+    .feature-card--editor { /* Specific adjustment for editor card on mobile */
+        position: inherit; 
     }
 
-    #New1 {
-        font-size: 12px;
+    .showcase__badge-text { 
+        font-size: 12px; 
     }
 
-    #showcase-left {
-        justify-items: center;
+    .showcase__left-content { 
+        /* justify-items: center; /* for grid/flex containers */
         margin: 0px !important;
     }
 
-    .txt-Area3 {
+    /* Specific adjustments for feature cards that were previously .txt-Area3 */
+    .feature-card--components, 
+    .feature-card--iterate { 
         margin-top: -65px !important;
-        display: block;
         margin-left: 0px !important;
+        display: block; /* Ensure it takes full width if that was the intent of no margin-left */
     }
 
-    .responsive-adusjment-1 {
-        /* margin-top: 103px !important; */
-        margin: 64px 34px 17px 0px;
+    .responsive-adusjment-1 { /* Parent of a .feature-card--iterate instance. Margins on this affect child card positioning. */
+        margin: 64px 34px 17px 0px; 
     }
     
-
-    .responsive-view-2 {
+    .responsive-view-2 { /* Unclear what this targets, possibly dead code */
         margin-bottom: 40px !important;
         margin-top: 26px !important;
     }
 
-    .Document-responsive {
+    .document-section__text-area.Document-responsive { 
         margin: -80px 0px 0px 0px !important;
-        justify-items: center;
-
+        /* justify-items: center; /* for grid/flex containers */
     }
 
-    .icn-img {
-        height: 44px;
-        width: 44px;
-        padding: 3px;
-        margin: 25px;
-
+    /* .feature-icon was already updated in previous diff for its base style, 
+       this media query version overrides margins. */
+    .feature-icon { 
+        padding: 3px; /* Added from original .icn-img mobile */
+        margin: 25px; /* Overrides base margin-right, makes it all-around */
     }
 
-    .txt-1 {
-        display: inline-block;
-        /* margin-top: .9rem; */
-        /* margin-right: 1.5rem; */
-        margin: 0px 9px 60px 5px;
+    /* .feature-icon__label was already updated for its base style,
+       this media query version overrides margins. */
+    .feature-icon__label { 
+        margin: 0px 9px 60px 5px; /* Overrides base margin */
     }
-    .document-txt-space {
+
+    .collaboration-section__content-area { 
         margin-top: 1.5rem;
     }
-    #img-icn2 {
-        height: 50px;
-        margin-left: 12.5rem;
-        margin-top: -5rem;
-        display: block;
+    .collaboration-section__heading-icon { /* Was #img-icn2 in mobile */
+        height: 50px; /* Consistent */
+        margin-left: 12.5rem; 
+        margin-top: -5rem; 
+        /* display: block; already set in base */
     }
 
-    .responsive-icon {
-        width: 86px;
-        margin-top: -39px;
+    .feature-preview { /* Was .responsive-icon in mobile */
+        width: 86px; 
+        margin-top: -39px; 
         margin-bottom: 36px;
     }
-    .img-setting {
+    .mock-store__feature-icon { /* Was .img-setting in mobile */
         width: 38px;
-        display: 44px;
+        height: 44px; /* ensure height is set */
         margin: 0px 0px 4px -38px;
     }
-    .h1-integrate {
-        font-size: 38px;
-        font-weight: 900;
-        color: #1d123c;
-        margin-left: 80px;
+    /* .section__title.h1-integrate - Assuming .h1-integrate class is removed from HTML and only .section__title is used.
+       If specific styling for this title on mobile is needed, it would be:
+       .integrate-section .section__title { ... } or similar.
+       For now, relying on base .section__title mobile styles if any, or global h1. */
+    .integrate-section .section__title { /* Targeting title specifically in integrate section for mobile */
+        font-size: 38px; /* Original .h1-integrate mobile style */
+        /* color: #1d123c; Original .h1-integrate color */
+        margin-left: 80px; /* Original .h1-integrate mobile style */
     }
 
-    .integrate-icon {
-        width: 50px;
-        height: 50px;
-        margin-top: -172px;
-        margin-left: 226px;
+
+    .integrate-section__heading-icon { /* Was .integrate-icon in mobile */
+        /* width: 50px; height: 50px; from base */
+        margin-top: -172px; 
+        margin-left: 226px; 
     }
-    .integrate-icon2 {
-        width: 50px;
-        height: 50px;
-        margin-top: -228px;
-        margin-left: 241px;
+    .latest-updates__heading-icon { /* Was .integrate-icon2 in mobile */
+        /* width: 50px; height: 50px; from base */
+        margin-top: -228px; 
+        margin-left: 241px; 
     }
-    .font-adjustment-1{
+    .footer__cta-title { /* Was .font-adjustment-1 in mobile */
         margin: 0px !important;    
         text-align: center !important;
     }
 
-    .reponsive-footer {
-        justify-content: center;
-        margin: 10px 0px 0px 105px;
+    .footer__cta-link-area { /* Was .reponsive-footer in mobile */
+        /* justify-content: center; for flex containers */
+        margin: 10px 0px 0px 105px; 
     }
-    .responsive-footer-final{
+    .responsive-footer-final{ /* Target for this class is unclear, keeping for now as it might be used by some JS or specific HTML element not obvious */
         margin-left: 120px;
     }
 
-    .img-responsive-11 {
+    .img-responsive-11 { /* Unclear target, keeping for now */
         margin: 2px 0px 24px 113px !important;
         display: inline-flex;
     }
-    .ul-item {
-        display: inline-block;
-        width: 210px;
-        margin: 7px 5px 14px 4px;
+    .integration-logos__item { /* Was .ul-item in mobile */
+        width: 210px; 
+        margin: 7px 5px 14px 4px; 
     }
 }
